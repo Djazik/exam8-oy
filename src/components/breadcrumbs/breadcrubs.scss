@@ -1,0 +1,14 @@
+.breadcrubs {
+  display: flex;
+  padding: 20px 0 50px 0;
+  align-items: center;
+  &__link {
+    color: #454545;
+  }
+  &__title {
+    color: #aaa;
+    span {
+        padding-left: 4px;
+    }
+  }
+}
