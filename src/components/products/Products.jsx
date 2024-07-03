@@ -1,14 +1,13 @@
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import "./product.scss";
 import { useDeleteProductMutation } from "../../context/api/productApi";
+import EditModule from "../editmodule/EditModule";
 
 const Products = ({ data, isAdmin }) => {
-
+  const [editProduct, setEditProduct] = useState(null)
     let [deleteProduct, {isLoading}] = useDeleteProductMutation()
 
-    const handleDeleteProduct = (id)=>{
-        deleteProduct(id)
-    }
+
 
   let productItem = data?.map((product) => (
     <div key={product.id}>
@@ -19,8 +18,8 @@ const Products = ({ data, isAdmin }) => {
 
       {isAdmin ? (
         <>
-          <button onClick={()=> handleDeleteProduct(product.id)}>delete</button>
-          <button>edit</button>
+          <button onClick={()=>deleteProduct(product.id)}>delete</button>
+          <button onClick={()=> setEditProduct(product)}>edit</button>
         </>
       ) : (
         <></>
@@ -28,10 +27,15 @@ const Products = ({ data, isAdmin }) => {
     </div>
   ));
   return (
-    <div>
+    <>
       <h2>product</h2>
       {productItem}
-    </div>
+      {
+        editProduct ?  
+        <EditModule data={editProduct} setData={setEditProduct}/> :
+        <></>
+      }
+    </>
   );
 };
 

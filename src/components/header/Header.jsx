@@ -8,6 +8,7 @@ import { FaRegHeart } from "react-icons/fa6";
 import { FiShoppingCart } from "react-icons/fi";
 
 import antena from "../../assets/images/antena.svg";
+import HeaderSearch from "./HeaderSearch";
 
 const Header = () => {
   return (
@@ -55,16 +56,7 @@ const Header = () => {
             <p>Каталог</p>
           </button>
 
-          <div className="navbar__search">
-            <input
-              type="text"
-              className="navbar__search__input"
-              placeholder="Поиск по товарам"
-            />
-            <button className="navbar__search__btn">
-              <IoSearch />
-            </button>
-          </div>
+         <HeaderSearch/>
 
           <div className="navbar__actions">
             <NavLink to="" className="navbar__actions__item">

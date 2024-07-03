@@ -114,6 +114,19 @@
             background-color: #ddd9;
           }
         }
+        .navbar__search-model {
+          position: absolute;
+          width: 100%;
+          height: 300px;
+          top: calc(100% + 2px);
+          z-index: 10;
+          padding: 20px;
+          box-shadow: 3px 3px 5px #0006;
+          background: #fff;
+          border-radius: 10px 10px 10px 10px;
+          overflow: auto;
+          color: black;
+        }
       }
       .navbar__actions {
         display: flex;
