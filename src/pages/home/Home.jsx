@@ -8,13 +8,11 @@ import Title from "../../components/title/Title";
 import Products from "../../components/products/Products";
 
 const Home = () => {
-  // let {data:detail, isLoading: isDetailLoading  } = useGetDetailProductQuery(15)
-  // console.log(detail)
+
   return (
     <div>
-      {/* <Login/> */}
-      {/* <Banner />
-      <Catalog /> */}
+      <Banner />
+      <Catalog />
       <Nornlight />
       <Products  />
       <Brands />
