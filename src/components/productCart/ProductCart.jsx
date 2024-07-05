@@ -22,7 +22,7 @@ const ProductCart = ({ data, isAdmin, isUser }) => {
     <div key={product.id} className="card">
       <div className="card__content">
         <div className="card__content__img">
-          <img src={product.url[0]} alt="" />
+          <img src={product.url} alt="" />
         </div>
         <p className="card__category">{product.category}</p>
         <h3 className="card__title">{product.title}</h3>

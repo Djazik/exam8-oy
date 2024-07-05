@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./wishlist.scss";
 import { useSelector } from "react-redux";
 import ProductCart from "../../components/productCart/ProductCart";
+import Empty from "../../components/empty/Empty";
 
 const Wishlist = () => {
   let wishlist = useSelector((state) => state.wishlist.value);
@@ -13,7 +14,7 @@ const Wishlist = () => {
     {
     wishlist.length ? 
     <ProductCart data={wishlist}/>
-    : <><h2>empty</h2></>
+    : <Empty />
   }
   </div>;
 };

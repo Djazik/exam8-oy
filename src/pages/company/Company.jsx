@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./company.scss";
 import BreadCrumbs from "../../components/breadcrumbs/BreadCrumbs";
 import Brands from "../../components/brands/Brands";
 import Blog from "../../components/blog/Blog";
 
 const Company = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+}, [])
   return (
     <section className="container">
       <div className=" about">

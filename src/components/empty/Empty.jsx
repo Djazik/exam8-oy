@@ -10,7 +10,7 @@ const Empty = () => {
   return (
     <div className='empty__cart'>
             <img src={empty} alt="" />
-            <h1 className="empty__title">Your cart is empty</h1>
+            <h1 className="empty__title">Your page is empty</h1>
             <button onClick={() => navigate("/")} className='back__home'>
                 <FaArrowLeftLong />
                 Back to Home

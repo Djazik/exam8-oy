@@ -91,7 +91,7 @@ const Cart = () => {
                   <div key={el.id} className="cart__table__item">
                     <div className="cart__table__frame">
                       <img
-                        src={el.image}
+                        src={el.url}
                         className="cart__table__item__img"
                         alt=""
                       />

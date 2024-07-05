@@ -7,12 +7,13 @@ import {
 } from "../../context/api/productApi";
 import { Link } from "react-router-dom";
 import { GoArrowRight } from "react-icons/go";
+import Loading from "../loading/Loading";
+import Productsee from "./Productsee";
 
 const Products = () => {
   let { data, isLoading, error, isError } = useGetProductsQuery();
   const [productLimit, setProductLimit] = useState(4);
   let { data: dataCategory } = useGetCategoryQuery();
-  // const [categoryValue, setCategoryValue] = useState("")
 
   const handleSeeMore = () => {
     setProductLimit((prevLimit) => prevLimit + 4);
@@ -38,22 +39,11 @@ const Products = () => {
           </li>
           {dataCategory?.map((el) => (
             <li key={el.id} className="products__categories__item">
-              <button
-                // onClick={() => setCategoryValue(el.title)}
-                className="products__categories__btn"
-              >
-                {el.title}
-              </button>
+              <button className="products__categories__btn">{el.title}</button>
             </li>
           ))}
         </ul>
-        <select
-          // value={categoryValue}
-          // onChange={(e) => setCategoryValue(e.target.value)}
-          name=""
-          id=""
-          className="products__category__select"
-        >
+        <select name="" id="" className="products__category__select">
           <option value="">All</option>
           {dataCategory?.map((el) => (
             <option key={el.id} value={el.title}>
@@ -61,17 +51,20 @@ const Products = () => {
             </option>
           ))}
         </select>
-
-        <ProductCart
-          isUser={true}
-          isAdmin={false}
-          data={data?.slice(0, productLimit)}
-        />
-        {data && productLimit < data.length && (
-          <button className="products__see__more__btn" onClick={handleSeeMore}>
-            See more
-          </button>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <ProductCart
+            isUser={true}
+            isAdmin={false}
+            data={data?.slice(0, productLimit)}
+          />
         )}
+        <Productsee
+          handleSeeMore={handleSeeMore}
+          data={data}
+          productLimit={productLimit}
+        />
       </div>
     </section>
   );
