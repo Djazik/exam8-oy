@@ -1,16 +1,28 @@
-import React from 'react'
-import "./manageproduct.scss"
-import { useGetProductsQuery } from '../../../context/api/productApi'
-import ProductCart from '../../../components/productCart/ProductCart'
+import React, { useEffect } from "react";
+import "./manageproduct.scss";
+import { useGetProductsQuery } from "../../../context/api/productApi";
+import ProductCart from "../../../components/productCart/ProductCart";
+import Loading from "../../../components/loading/Loading";
 
 const ManageProduct = () => {
-   let {data} = useGetProductsQuery()
-  return (
-    <div>
-        <h2>ManageProduct</h2>
-        <ProductCart isAdmin={true} data={data} />
-    </div>
-  )
-}
+  let { data, isLoading } = useGetProductsQuery();
 
-export default ManageProduct
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return (
+    <>
+      {isLoading && <Loading />}
+      <section id="manage-product">
+        <div className="container manage__product">
+          <h2 className="manage__product__title">ManageProduct</h2>
+          <div className="manage__product__wrapper">
+            <ProductCart isAdmin={true} data={data} />
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default ManageProduct;

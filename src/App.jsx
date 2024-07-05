@@ -16,6 +16,8 @@ import { ToastContainer } from "react-toastify";
 import Wishlist from "./pages/wishlist/Wishlist";
 import Cart from "./pages/cart/Cart";
 import Auth from "./pages/auth/Auth";
+import ManageCategory from "./pages/admin/manage-category/ManageCategory";
+import CreateCategory from "./pages/admin/create-category/CreateCategory";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
           <Route path="admin" element={<Admin />}>
             <Route path="createproduct" element={<CreateProduct />} />
             <Route path="manageproduct" element={<ManageProduct />} />
+            <Route path="createcategory" element={<ManageCategory />} />
+            <Route path="managecategory" element={<CreateCategory />} />
           </Route>
         </Route>
       </Routes>
