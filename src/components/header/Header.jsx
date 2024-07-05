@@ -12,8 +12,9 @@ import HeaderSearch from "./HeaderSearch";
 import { useSelector } from "react-redux";
 
 const Header = () => {
-  let wishlist = useSelector((state) => state.wishlist.value);
-  const cart = useSelector(state => state.cart.value)
+  const cart = useSelector((state) => state.cart.value);
+  const wishlist = useSelector((state) => state.wishlist.value);
+  
 
   return (
     <div className="container header">

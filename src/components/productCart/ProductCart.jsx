@@ -57,22 +57,24 @@ const ProductCart = ({ data, isAdmin, isUser }) => {
           ) : (
             <></>
           )}
-        
         </div>
         <div className="change__btn">
-            {isAdmin ? (
-              <>
-                <button className="change__btn__delete" onClick={() => deleteProduct(product.id)}>
-                  <FaRegTrashAlt />
-                </button>
-                <button onClick={() => setEditProduct(product)}>
-                  <MdOutlineCreate />
-                </button>
-              </>
-            ) : (
-              <></>
-            )}
-          </div>
+          {isAdmin ? (
+            <>
+              <button
+                className="change__btn__delete"
+                onClick={() => deleteProduct(product.id)}
+              >
+                <FaRegTrashAlt />
+              </button>
+              <button onClick={() => setEditProduct(product)}>
+                <MdOutlineCreate />
+              </button>
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
     </div>
   ));

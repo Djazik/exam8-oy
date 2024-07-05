@@ -9,9 +9,9 @@ const Nornlight = () => {
     <section className="container">
       <div className="nornlight">
         <div className="nornlight__hero">
-          <h2 className="nornlight__title">Каталог</h2>
+          <h2 className="nornlight__title">Почему NORNLIGHT?</h2>
           <Link className="nornlight__hero_link">
-            Весь каталог
+               О компании
             <GoArrowRight />
           </Link>
         </div>

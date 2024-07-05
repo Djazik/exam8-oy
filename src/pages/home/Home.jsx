@@ -14,9 +14,9 @@ const Home = () => {
     <div>
       {/* <Login/> */}
       <Banner />
-      <Products  />
       <Catalog />
       <Nornlight />
+      <Products  />
       <Brands />
       <Blog />
       <Title />
