@@ -1,14 +1,14 @@
 import React from 'react'
 import "./manageproduct.scss"
 import { useGetProductsQuery } from '../../../context/api/productApi'
-import Products from '../../../components/products/Products'
+import ProductCart from '../../../components/productCart/ProductCart'
 
 const ManageProduct = () => {
    let {data} = useGetProductsQuery()
   return (
     <div>
         <h2>ManageProduct</h2>
-        <Products isAdmin={true} data={data} />
+        <ProductCart isAdmin={true} data={data} />
     </div>
   )
 }

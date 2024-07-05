@@ -11,6 +11,11 @@ import Blog from "./pages/blog/Blog";
 import CreateProduct from "./pages/admin/create-product/CreateProduct";
 import ManageProduct from "./pages/admin/manage-product/ManageProduct";
 import Admin from "./pages/admin/Admin";
+import Login from "./pages/login/Login";
+import { ToastContainer } from "react-toastify";
+import Wishlist from "./pages/wishlist/Wishlist";
+import Cart from "./pages/cart/Cart";
+import Auth from "./pages/auth/Auth";
 
 function App() {
   return (
@@ -24,12 +29,18 @@ function App() {
           <Route path="/garant" element={<Garant />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
-        <Route path="/admin" element={<Admin/>}>
-          <Route path="createproduct" element={<CreateProduct />} />
-          <Route path="manageproduct" element={<ManageProduct />} />
+        <Route path="/" element={<Auth />}>
+          <Route path="admin" element={<Admin />}>
+            <Route path="createproduct" element={<CreateProduct />} />
+            <Route path="manageproduct" element={<ManageProduct />} />
+          </Route>
         </Route>
       </Routes>
+      <ToastContainer />
     </>
   );
 }

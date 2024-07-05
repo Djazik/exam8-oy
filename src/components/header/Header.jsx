@@ -9,8 +9,12 @@ import { FiShoppingCart } from "react-icons/fi";
 
 import antena from "../../assets/images/antena.svg";
 import HeaderSearch from "./HeaderSearch";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  let wishlist = useSelector((state) => state.wishlist.value);
+  const cart = useSelector(state => state.cart.value)
+
   return (
     <div className="container header">
       <div className="hero__nav">
@@ -59,10 +63,11 @@ const Header = () => {
          <HeaderSearch/>
 
           <div className="navbar__actions">
-            <NavLink to="" className="navbar__actions__item">
+            <NavLink to="/wishlist" className="navbar__actions__item">
               <FaRegHeart />
               <p>Избранное</p>
-              {/* <span className="wishlist__length">{wishlist.length}</span> */}
+
+              <span className="wishlist__length">{wishlist.length}</span>
             </NavLink>
 
             <NavLink to="" className="navbar__actions__item">
@@ -73,7 +78,7 @@ const Header = () => {
             <NavLink to="/cart" className="navbar__actions__item">
               <FiShoppingCart />
               <p>Корзина</p>
-              {/* <span>{cart.length}</span> */}
+              <span>{cart.length}</span>
             </NavLink>
           </div>
         </div>

@@ -6,19 +6,14 @@ import Brands from "../../components/brands/Brands";
 import Blog from "../../components/blog/Blog";
 import Title from "../../components/title/Title";
 import Products from "../../components/products/Products";
-import {
-  useGetProductsQuery,
-  useGetDetailProductQuery,
-} from "../../context/api/productApi";
 
 const Home = () => {
-  let { data, isLoading, error, isError } = useGetProductsQuery();
   // let {data:detail, isLoading: isDetailLoading  } = useGetDetailProductQuery(15)
   // console.log(detail)
   return (
     <div>
       {/* <Login/> */}
-      <Products isAdmin={false} data={data} />
+      <Products  />
       <Banner />
       <Catalog />
       <Nornlight />

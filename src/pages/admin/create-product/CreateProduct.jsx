@@ -12,8 +12,7 @@ const initialState = {
 };
 const CreateProduct = () => {
   let [createProducts, { isLoading, isSuccess }] = useCreateProductMutation();
-  const { formData, handleChange, setFormData } =
-    useGetInputValue(initialState);
+  const { formData, handleChange, setFormData } = useGetInputValue(initialState);
 
   useEffect(() => {
     if (isSuccess) {
@@ -24,6 +23,7 @@ const CreateProduct = () => {
 
   const handleCreateProduct = (e) => {
     e.preventDefault();
+    formData.price = +formData.price
     createProducts(formData);
   };
 
@@ -44,7 +44,7 @@ const CreateProduct = () => {
           value={formData.price}
         />
         <input
-          type="text"
+          type="images"
           name="url"
           onChange={handleChange}
           value={formData.url}

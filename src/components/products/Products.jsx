@@ -1,40 +1,15 @@
-import React, { memo, useState } from "react";
+import React, { memo } from "react";
 import "./product.scss";
-import { useDeleteProductMutation } from "../../context/api/productApi";
-import EditModule from "../editmodule/EditModule";
-
-const Products = ({ data, isAdmin }) => {
-  const [editProduct, setEditProduct] = useState(null)
-    let [deleteProduct, {isLoading}] = useDeleteProductMutation()
+import ProductCart from "../productCart/ProductCart";
+import { useGetProductsQuery } from "../../context/api/productApi";
 
 
+const Products = () => {
+  let { data, isLoading, error, isError } = useGetProductsQuery();
 
-  let productItem = data?.map((product) => (
-    <div key={product.id}>
-      <img src={product.url[0]} width={200} alt="" />
-      <h2>{product.title}</h2>
-      <p>{product.price}</p>
-      <p>{product.desc}</p>
-
-      {isAdmin ? (
-        <>
-          <button onClick={()=>deleteProduct(product.id)}>delete</button>
-          <button onClick={()=> setEditProduct(product)}>edit</button>
-        </>
-      ) : (
-        <></>
-      )}
-    </div>
-  ));
   return (
     <>
-      <h2>product</h2>
-      {productItem}
-      {
-        editProduct ?  
-        <EditModule data={editProduct} setData={setEditProduct}/> :
-        <></>
-      }
+      <ProductCart isUser={true} isAdmin={false} data={data}/>
     </>
   );
 };
