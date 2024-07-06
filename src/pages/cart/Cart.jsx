@@ -86,7 +86,7 @@ const Cart = () => {
                  
                    <div key={el.id} className="cart__table__item">
                    <div className="cart__table__frame">
-                       <img src={el.image} className='cart__table__item__img' alt="" />
+                       <img src={el.url} className='cart__table__item__img' alt="" />
                    </div>
                    <div className="cart__table__first__col">
                        <p className='cart__table__item__title'>{el.title}</p>
