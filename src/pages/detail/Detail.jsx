@@ -42,7 +42,7 @@ const Detail = () => {
             <div className="single__product__frames">
               <img
                 className="single__product__image"
-                src={data?.image}
+                src={data?.url}
                 alt=""
               />
             </div>

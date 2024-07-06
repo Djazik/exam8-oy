@@ -2,16 +2,22 @@ import React, { memo, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { useGetSearchProductsQuery } from "../../../context/api/productApi";
 import "./HeaderSearch.scss"
+import { Link, useNavigate } from "react-router-dom";
 
 const HeaderSearch = () => {
   const [value, setValue] = useState("")
   let {data} = useGetSearchProductsQuery({title:value})
-
+  const navigate = useNavigate();
+  const goProduct =(id)=>{
+    navigate(`/single-product/${id}`);
+    setValue("");
+  }
   let searchItems = data?.map(el => 
     <div key={el.id}>
         <img src={el.url} width={50} alt="" />
-        <span>{el.title}</span>
+        <div onClick={()=> goProduct(el.id)} style={{cursor: "pointer"}}>{el.title}</div>
     </div>)
+    
 
   return (
     <div className="navbar__search">
