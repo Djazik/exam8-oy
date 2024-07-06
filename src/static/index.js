@@ -94,3 +94,37 @@ export const BLOG__ITEMS = [
         image: blogimg3
     }
 ]
+
+export const NAVLINK = [
+    {
+      id: 1,
+      name: "О компании",
+      path: "/company",
+    },
+    {
+      id: 2,
+      name: "Доставка и оплата",
+      path: "/delivery",
+    },
+    {
+      id: 3,
+      name: "Возврат",
+      path: "/return",
+    },
+    {
+      id: 4,
+      name: "Гарантия",
+      path: "/garant",
+    },
+    {
+      id: 5,
+      name: "Контакты",
+      path: "/contact",
+    },
+    {
+      id: 6,
+      name: "Блог",
+      path: "/blog",
+    },
+  ];
+  

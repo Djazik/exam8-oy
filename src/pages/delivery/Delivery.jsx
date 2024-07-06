@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import BreadCrumbs from "../../components/breadcrumbs/BreadCrumbs";
 import "./delivery.scss";
 
 const Delivery = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+ 
   return (
     <>
       <section className="delivery">

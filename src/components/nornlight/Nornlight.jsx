@@ -10,7 +10,7 @@ const Nornlight = () => {
       <div className="nornlight">
         <div className="nornlight__hero">
           <h2 className="nornlight__title">Почему NORNLIGHT?</h2>
-          <Link className="nornlight__hero_link">
+          <Link to={"/company"} className="nornlight__hero_link">
                О компании
             <GoArrowRight />
           </Link>

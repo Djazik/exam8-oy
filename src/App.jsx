@@ -1,27 +1,36 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import Layout from "./components/layout/Layout";
-import Home from "./pages/home/Home";
-import Company from "./pages/company/Company";
-import Delivery from "./pages/delivery/Delivery";
-import Return from "./pages/return/Return";
-import Garant from "./pages/garant/Garant";
-import Contact from "./pages/contact/Contact";
-import Blog from "./pages/blog/Blog";
-import CreateProduct from "./pages/admin/create-product/CreateProduct";
-import ManageProduct from "./pages/admin/manage-product/ManageProduct";
-import Admin from "./pages/admin/Admin";
-import Login from "./pages/login/Login";
+import "./App.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import Wishlist from "./pages/wishlist/Wishlist";
-import Cart from "./pages/cart/Cart";
-import Auth from "./pages/auth/Auth";
-import ManageCategory from "./pages/admin/manage-category/ManageCategory";
-import CreateCategory from "./pages/admin/create-category/CreateCategory";
+import { Suspense, lazy } from "react";
+import Layout from "./components/layout/Layout";
+import Loading from "./components/loading/Loading";
+import { ScrollTop } from "./components/scroll";
+const Home = lazy(() => import("./pages/home/Home"));
+const Company = lazy(() => import("./pages/company/Company"));
+const Delivery = lazy(() => import("./pages/delivery/Delivery"));
+const Return = lazy(() => import("./pages/return/Return"));
+const Garant = lazy(() => import("./pages/garant/Garant"));
+const Contact = lazy(() => import("./pages/contact/Contact"));
+const Blog = lazy(() => import("./pages/blog/Blog"));
+const CreateProduct = lazy(() => import("./pages/admin/create-product/CreateProduct"));
+const ManageProduct = lazy(() => import("./pages/admin/manage-product/ManageProduct"));
+const ManageCategory = lazy(() => import("./pages/admin/manage-category/ManageCategory"));
+const CreateCategory = lazy(() => import("./pages/admin/create-category/CreateCategory"));
+const Admin = lazy(() => import("./pages/admin/Admin"));
+const Login = lazy(() => import("./pages/login/Login"));
+const Wishlist = lazy(() => import("./pages/wishlist/Wishlist"));
+const Cart = lazy(() => import("./pages/cart/Cart"));
+const Auth = lazy(() => import("./pages/auth/Auth"));
+const Detail = lazy(() => import("./pages/detail/Detail"));
+const Products = lazy(() => import("./components/products/Products"));
+const NotFound = lazy(() => import("./components/notfound/NotFound"));
+const Category = lazy(() => import("./pages/category/Category"));
 
 function App() {
   return (
-    <>
+    <Suspense fallback={<div><Loading/></div>}>
+    <BrowserRouter>
+    <ScrollTop/>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -34,6 +43,10 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/all-products" element={<Products />} />
+          <Route path="/single-product/:id" element={<Detail />} />
+          <Route path="/catalog" element={<Category />} />
         </Route>
         <Route path="/" element={<Auth />}>
           <Route path="admin" element={<Admin />}>
@@ -45,7 +58,8 @@ function App() {
         </Route>
       </Routes>
       <ToastContainer />
-    </>
+    </BrowserRouter>
+    </Suspense>
   );
 }
 

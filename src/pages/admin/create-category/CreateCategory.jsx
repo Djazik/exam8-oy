@@ -21,9 +21,7 @@ const CreateCategory = () => {
     }
   }, [isSuccess]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+ 
 
   const handleCreateProduct = (e) => {
     e.preventDefault();

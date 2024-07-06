@@ -15,9 +15,7 @@ const ManageCategory = () => {
   const [deleteCategory, { isLoading: loadingDeleteCategory, error, isSuccess }] = useDeleteCategoryMutation();
   const [editCategory, setEditCategory] = useState(null);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
 
   useEffect(() => {
     if (isSuccess) {

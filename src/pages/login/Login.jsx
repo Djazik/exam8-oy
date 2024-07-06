@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+import React, { memo } from "react";
 import "./login.scss";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
 import { useNavigate } from "react-router-dom";
@@ -26,9 +26,7 @@ const Login = () => {
     setFormData(initialState);
   };
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+ 
 
   return (
     <section id="login">

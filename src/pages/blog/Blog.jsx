@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { FiArrowRight } from "react-icons/fi";
 
 import BreadCrumbs from '../../components/breadcrumbs/BreadCrumbs'
 import { BLOG__ITEMS } from '../../static'
 
 const Blog = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-}, [])
+
   return (
     <section className='container' >
       <BreadCrumbs/>

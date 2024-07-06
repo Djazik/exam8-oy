@@ -1,141 +1,67 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "./banner.scss";
-import { Pagination } from "swiper/modules";
-import bannerImg from "../../assets/images/hero-banner1.png";
+import React from 'react'
+import "./banner.scss"
+import 'swiper/css';
+import 'swiper/css/pagination';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 
-const Banner = () => {
-  return (
-    <div className="container">
-      <Swiper
-        loop={true}
-        pagination={true}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <div className="banner">
-            <div className="banner-left">
-              <h1 className="banner__title">
-                Скидка 15% <br /> на все подвесные светильники <br />
-                <span>до 5 февраля</span>
-              </h1>
-            </div>
-            <div className="banner-right">
-              <img src={bannerImg} alt="" />
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="banner">
-            <div className="banner-left">
-              <h1>
-                Скидка 15% <br /> на все подвесные светильники <br />
-                <span>до 5 февраля</span>
-              </h1>
-            </div>
-            <div className="banner-right">
-              <img src={bannerImg} alt="" />
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="banner">
-            <div className="banner-left">
-              <h1>
-                Скидка 15% <br /> на все подвесные светильники <br />
-                <span>до 5 февраля</span>
-              </h1>
-            </div>
-            <div className="banner-right">
-              <img src={bannerImg} alt="" />
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="banner">
-            <div className="banner-left">
-              <h1>
-                Скидка 15% <br /> на все подвесные светильники <br />
-                <span>до 5 февраля</span>
-              </h1>
-            </div>
-            <div className="banner-right">
-              <img src={bannerImg} alt="" />
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="banner">
-            <div className="banner-left">
-              <h1>
-                Скидка 15% <br /> на все подвесные светильники <br />
-                <span>до 5 февраля</span>
-              </h1>
-            </div>
-            <div className="banner-right">
-              <img src={bannerImg} alt="" />
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="banner">
-            <div className="banner-left">
-              <h1>
-                Скидка 15% <br /> на все подвесные светильники <br />
-                <span>до 5 февраля</span>
-              </h1>
-            </div>
-            <div className="banner-right">
-              <img src={bannerImg} alt="" />
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="banner">
-            <div className="banner-left">
-              <h1>
-                Скидка 15% <br /> на все подвесные светильники <br />
-                <span>до 5 февраля</span>
-              </h1>
-            </div>
-            <div className="banner-right">
-              <img src={bannerImg} alt="" />
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="banner">
-            <div className="banner-left">
-              <h1>
-                Скидка 15% <br /> на все подвесные светильники <br />
-                <span>до 5 февраля</span>
-              </h1>
-            </div>
-            <div className="banner-right">
-              <img src={bannerImg} alt="" />
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="banner">
-            <div className="banner-left">
-              <h1>
-                Скидка 15% <br /> на все подвесные светильники <br />
-                <span>до 5 февраля</span>
-              </h1>
-            </div>
-            <div className="banner-right">
-              <img src={bannerImg} alt="" />
-            </div>
-          </div>
-        </SwiperSlide>
-      </Swiper>
-    </div>
-  );
-};
+import banner1 from "../../assets/images/hero-banner1.png";
 
-export default Banner;
+const HeroBanner = () => {
+    return (
+        <>
+            <section id="hero">
+                <Swiper
+                    loop={true}
+                    pagination={true}
+                    modules={[Pagination]}
+                    className="mySwiper hero container"
+                >
+                    <SwiperSlide className='hero__banner'>
+                        <div className="hero__banner__content">
+                            <h2 className="banner__title">
+                                Скидка 15% <br /> на все подвесные светильники <br /> <span>до 5 февраля</span>
+                            </h2>
+                        </div>
+                        <div className="hero__banner__frame">
+                            <img src={banner1} alt="" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='hero__banner'>
+                        <div className="hero__banner__content">
+                            <h2 className="banner__title">
+                                Скидка 15% <br /> на все подвесные светильники <br /> <span>до 5 февраля</span>
+                            </h2>
+                        </div>
+                        <div className="hero__banner__frame">
+                            <img src={banner1} alt="" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='hero__banner'>
+                        <div className="hero__banner__content">
+                            <h2 className="banner__title">
+                                Скидка 15% <br /> на все подвесные светильники <br /> <span>до 5 февраля</span>
+                            </h2>
+                        </div>
+                        <div className="hero__banner__frame">
+                            <img src={banner1} alt="" />
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide className='hero__banner'>
+                        <div className="hero__banner__content">
+                            <h2 className="banner__title">
+                                Скидка 15% <br /> на все подвесные светильники <br /> <span>до 5 февраля</span>
+                            </h2>
+                        </div>
+                        <div className="hero__banner__frame">
+                            <img src={banner1} alt="" />
+                        </div>
+                    </SwiperSlide>
+                </Swiper>
+            </section>
+        </>
+    )
+}
+
+export default HeroBanner

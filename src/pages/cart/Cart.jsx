@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from "react";
+  import React, { memo } from "react";
 import "./cart.scss";
 import BreadCrumbs from "../../components/breadcrumbs/BreadCrumbs";
 
@@ -16,7 +16,6 @@ import { toast } from "react-toastify";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
 import Empty from "../../components/empty/Empty";
 
-
 const BOT_TOKEN = "7201229196:AAHiQ92sQtT-WyXTXCkW7H9RSjMkRVxTwTs";
 const CHAT_ID = "-4235601750";
 
@@ -29,16 +28,12 @@ const initialState = {
 };
 
 const Cart = () => {
-  const { formData, handleChange } =
-    useGetInputValue(initialState);
+  const { formData, handleChange } = useGetInputValue(initialState);
 
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
   let totalPrice = cart?.reduce((a, b) => a + b.price * b.quantity, 0);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const handleOrder = (e) => {
     e.preventDefault();
@@ -88,49 +83,30 @@ const Cart = () => {
 
               <div className="cart__table__wrapper">
                 {cart?.map((el) => (
-                  <div key={el.id} className="cart__table__item">
-                    <div className="cart__table__frame">
-                      <img
-                        src={el.url}
-                        className="cart__table__item__img"
-                        alt=""
-                      />
-                    </div>
-                    <div className="cart__table__first__col">
-                      <p className="cart__table__item__title">{el.title}</p>
-                      <p className="cart__table__item__price">
-                        {el.price * el.quantity}₽
-                      </p>
-                    </div>
-                    <p className="cart__table__description">{el.description}</p>
-                    <p className="cart__table__articul">
-                      RAD-COMBO-50/XXX/230/XXX/XXX/S4/XS
-                    </p>
-                    <div className="cart__table__count__box">
-                      <button
-                        disabled={el.quantity === 1}
-                        onClick={() => dispatch(decCart(el))}
-                        className="cart__table__count__minus"
-                      >
-                        -
-                      </button>
-                      <span className="cart__table__count__number">
-                        {el.quantity}
-                      </span>
-                      <button
-                        onClick={() => dispatch(incCart(el))}
-                        className="cart__table__count__plus"
-                      >
-                        +
-                      </button>
-                    </div>
-                    <button
-                      onClick={() => dispatch(removeFromCart(el))}
-                      className="cart__table__delete__btn"
-                    >
-                      <FaRegTrashCan />
-                    </button>
-                  </div>
+                 
+                   <div key={el.id} className="cart__table__item">
+                   <div className="cart__table__frame">
+                       <img src={el.image} className='cart__table__item__img' alt="" />
+                   </div>
+                   <div className="cart__table__first__col">
+                       <p className='cart__table__item__title'>{el.title}</p>
+                       <p className='cart__table__item__price'>
+                           {el.price * el.quantity}₽
+                       </p>
+                   </div>
+                   <p className="cart__table__description">{el.desc}</p>
+                   <p className="cart__table__articul">
+                       RAD-COMBO-50/XXX/230/XXX/XXX/S4/XS
+                   </p>
+                   <div className="cart__table__count__box">
+                       <button disabled={el.quantity === 1} onClick={() => dispatch(decCart(el))} className="cart__table__count__minus">-</button>
+                       <span className="cart__table__count__number">{el.quantity}</span>
+                       <button onClick={() => dispatch(incCart(el))} className="cart__table__count__plus">+</button>
+                   </div>
+                   <button onClick={() => dispatch(removeFromCart(el))} className="cart__table__delete__btn">
+                       <FaRegTrashCan />
+                   </button>
+               </div>
                 ))}
               </div>
             </div>
@@ -216,7 +192,7 @@ const Cart = () => {
           </div>
         </section>
       ) : (
-        <Empty/>
+        <Empty />
       )}
     </>
   );

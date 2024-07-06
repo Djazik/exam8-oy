@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import BreadCrumbs from '../../components/breadcrumbs/BreadCrumbs'
 import "./return.scss"
 const Return = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-}, [])
+
 return (
     <section className="container">
         <div className=" return">

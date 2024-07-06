@@ -1,22 +1,16 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from "./App.jsx";
-import "./index.css";
-import { BrowserRouter } from "react-router-dom";
+import App from "./App.jsx";
 import { Provider } from "react-redux";
+import "swiper/css";
 import { store } from "./context/store.js";
 import "react-toastify/dist/ReactToastify.css";
-import Loading from "./components/loading/Loading.jsx";
-const App = lazy(() => import("./App.jsx"));
+import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Suspense fallback={<Loading/>}>
-      <BrowserRouter>
         <Provider store={store}>
           <App />
         </Provider>
-      </BrowserRouter>
-    </Suspense>
   </React.StrictMode>
 );

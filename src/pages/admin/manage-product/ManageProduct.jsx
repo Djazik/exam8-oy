@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./manageproduct.scss";
 import { useGetProductsQuery } from "../../../context/api/productApi";
 import ProductCart from "../../../components/productCart/ProductCart";
@@ -7,9 +7,7 @@ import Loading from "../../../components/loading/Loading";
 const ManageProduct = () => {
   let { data, isLoading } = useGetProductsQuery();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+ 
   return (
     <>
       {isLoading && <Loading />}

@@ -23,7 +23,7 @@ const Products = () => {
       <div className="products">
         <div className="products__header">
           <h3 className="products__title">Популярные товары</h3>
-          <Link className="products__header__link">
+          <Link to={"/all-products"} className="products__header__link">
             Все товары
             <GoArrowRight />
           </Link>

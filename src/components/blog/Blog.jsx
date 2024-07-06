@@ -11,7 +11,7 @@ const Blog = () => {
       <div className="blog">
         <div className="blog__hero">
           <h2 className="blog__hero__title">Блог</h2>
-          <Link className="blog__hero__link">
+          <Link to={"/blog"} className="blog__hero__link">
             Перейти в блог
             <GoArrowRight />
           </Link>

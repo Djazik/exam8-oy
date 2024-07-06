@@ -1,7 +1,7 @@
 import React, { memo, useState } from "react";
 import { IoSearch } from "react-icons/io5";
-import { useGetSearchProductsQuery } from "../../context/api/productApi";
-
+import { useGetSearchProductsQuery } from "../../../context/api/productApi";
+import "./HeaderSearch.scss"
 
 const HeaderSearch = () => {
   const [value, setValue] = useState("")
@@ -9,7 +9,7 @@ const HeaderSearch = () => {
 
   let searchItems = data?.map(el => 
     <div key={el.id}>
-        <img src={el.url[0]} width={50} alt="" />
+        <img src={el.url} width={50} alt="" />
         <span>{el.title}</span>
     </div>)
 
